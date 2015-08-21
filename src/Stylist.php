@@ -25,5 +25,27 @@
 			return $this->name;
 		}
 		
+		function save()
+		{
+			$GLOBALS['DB']->exec("INSERT INTO stylists (name) VALUES ('{$this->getName()}');");
+			$this->id = $GLOBALS['DB']->lastInsertId();
+		}
+		
+		function update($new_name)
+		{
+			$GLOBALS['DB']->exec("UPDATE stylists SET name = '{$new_name}' WHERE id = {$this->getId()};");
+			$this->setName($new_name);
+		}
+		
+		function delete()
+		{
+			$clients = Client::getAll();
+			foreach($clients as $client) {
+				if($client.getStylistId() == $this->getId()) {
+					$client->delete();
+				}
+			}
+			$GLOBALS['DB']->exec("DELETE FROM stylists WHERE id = {$this->getId()};");
+		}
 	}
 ?>
