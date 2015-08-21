@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Beauty Hair Salon</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/"><i class="fa fa-diamond"></i> Beauty Hair Salon</a>
+                </div>			
+            </div>
+	    </nav>
+        <div class="backbackground">
+            <div class="jumbotron vertical-center">
+                <div class="container">
+                    <h2>Available Stylist to Style Your Hair</h2>
+                    {% if stylists is not empty %}
+                        <p>Here are The Stylists to Choose From:</p>
+                        <ul>
+                            {% for stylist in stylists %}
+                                <form action="/stylists/{{ stylist.getId }}">
+                                    <button type="submit" class="btn btn-default"><i class="fa fa-user-secret"></i> {{ stylist.getName }}</button>
+                                </form>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>There are no stylists Here Yet </p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="container-fluid">
+                <form action="/stylists" method="post">
+                    <div class="form-group">
+                        <label for="name">Stylist Name:</label>
+                        <input type="name" name="name" id="name" class="form-control">
+                        <button type="submit" class="btn btn-default"><i class="fa fa-plus"></i> Add stylist</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

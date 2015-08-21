@@ -1,0 +1,33 @@
+.backbackground {
+	background-color: ghostwhite;
+}
+
+.navbar{
+	background-color: black;
+	color: white;
+}
+
+.container-fluid {
+	margin-left: 12%;
+	margin-right: 12%;
+}
+
+.jumbotron {
+	background-color: gray;
+	color: white;
+}
+
+.jumbotron.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+.jumbotron.vertical-center container{
+
+}
+
+.btn {
+	background-color: black;
+	color: white;
+	size: 5px;
+}
