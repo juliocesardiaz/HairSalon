@@ -1,12 +1,12 @@
 # Hair Salon database app with MySQL
 
-##### App to keep track of stylist in  a hair salon  and allows you to see their clients , 8/21/15
+##### App to keep track of stylists in  a hair salon  and allows you to see their clients , 8/21/15
 
 #### Julio Diaz
 
 ## Description
 
-This application will allow a user to enter a list of stylists and clients.
+This application will allows a user to enter a list of stylists and clients.
 
 ## Setup
 
